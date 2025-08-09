@@ -10,14 +10,20 @@ import BookingsDropdownOwnersXWide from "./components/typography/bookings_dropdo
 import Link from "./components/link";
 import Button from "./components/button";
 import TextInputBox from "./components/text_input_box";
+import OtpInput from "./components/OtpInput";
 import { SkinServiceCard } from "./components/cards/SkinServiceCard";
 import { CardsComponent } from "./components/cards/CardsComponent";
 import { Card } from "./components/cards/Card";
 
+import React, { useState } from "react";
+
 export default function Home() {
+
+  const [otp, setOtp] = useState("");
   return (
     <div>
- <Button>
+      
+    <Button>
       Book Now
     </Button>
     <br />
@@ -131,6 +137,11 @@ export default function Home() {
         </p>
 
       </Card>
+
+        <h2 className="text-2xl font-bold text-left text-gray-800 mb-6">OTP Input Example</h2>
+      <OtpInput value={otp} onChange={setOtp} />
+
+
 
     </div>
   );
