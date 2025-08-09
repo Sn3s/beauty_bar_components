@@ -107,9 +107,9 @@ export default function Home() {
     <h2 className="text-2xl font-bold text-left text-gray-800 mb-6">Skin Services</h2>
       <SkinServiceCard
           imgSrc="https://images.unsplash.com/photo-1590483259871-331b41e3d30b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          title="THE HYDRATOR"
-          text="A rejuvenating facial treatment designed to deeply cleanse and hydrate your skin, leaving it refreshed and glowing."
-          duration="60 Minutes"
+          title="The Hydrator"
+          text="Refresh the pores with a deep-cleansing exfoliation using steam and enzymes for smooth, clear and radiant skin"
+          duration="30 MINUTES | BOOKING REQ."
           buttonText="Book Now"
           onButtonClick={() => console.log("Skinservice button clicked!")}
       />

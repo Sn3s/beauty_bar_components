@@ -26,21 +26,33 @@ export const SkinServiceCard = ({
     size: 'text-5xl',
     lineHeight: 'leading-normal',
     letterSpacing: 'tracking-normal',
-    horizontalAlign: 'text-center',
+    horizontalAlign: 'text-left',
     case: 'uppercase',
+    color: 'text-black'
+  };
+
+  const textTypography = {
+    fontFamily: "font-['Owners_XWide']",
+    weight: 'font-normal',
+    style: 'not-italic',
+    size: 'text-2xl',
+    lineHeight: 'leading-normal',
+    letterSpacing: 'tracking-normal',
+    horizontalAlign: 'text-left',
+    case: 'normal',
     color: 'text-black'
   };
 
   const durationTypography = {
     fontFamily: "font-['Owners_XWide']",
-    weight: 'font-normal',
+    weight: 'font-base',
     style: 'not-italic',
     size: 'text-base',
     lineHeight: 'leading-normal',
     letterSpacing: 'tracking-normal',
-    horizontalAlign: 'text-center',
+    horizontalAlign: 'text-left',
     case: 'uppercase',
-    color: 'text-black'
+    color: 'text-[#757575]'
   };
 
   const buttonTypography = {
@@ -50,20 +62,19 @@ export const SkinServiceCard = ({
     size: 'text-base',
     lineHeight: 'leading-normal',
     letterSpacing: 'tracking-normal',
-    horizontalAlign: 'text-center',
-    case: 'capitalize',
-    color: 'text-[#757575]'
+    case: 'uppercase',
+    color: 'text-black'
   };
 
-  // --- Building Class Strings from Typography Objects ---
   const titleClasses = Object.values(titleTypography).join(' ');
+  const textClasses = Object.values(textTypography).join(' ');
   const durationClasses = Object.values(durationTypography).join(' ');
   const buttonTextClasses = Object.values(buttonTypography).join(' ');
 
   const cardClasses = "bg-white rounded-[16px] overflow-hidden transition-all duration-200 w-[1236px] h-[452.5px] flex flex-row";
   const imageClasses = "w-[393px] h-[453px] object-cover rounded-[16px]";
   const contentClasses = "bg-white p-8 flex-1 flex flex-col justify-start gap-4";
-  const buttonStyleClasses = "bg-[#F9F2EB] px-6 py-3 rounded-lg font-bold transition-colors duration-200 hover:bg-[#F0E6DD]";
+  const buttonStyleClasses = "bg-[#F9F2EB] px-6 py-3 rounded-lg font-bold transition-colors duration-200 hover:bg-[#F0E6DD]"; // Kept font-bold here
 
   return (
     <div className={cardClasses}>
@@ -80,7 +91,7 @@ export const SkinServiceCard = ({
 
       <div className={contentClasses}>
         <h5 className={titleClasses}>{title}</h5>
-        <p className="text-sm font-normal text-gray-600">{text}</p>
+        <p className={textClasses}>{text}</p>
         <span className={durationClasses}>{duration}</span>
         
         <div className="mt-auto">
