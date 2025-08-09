@@ -17,10 +17,53 @@ export const SkinServiceCard = ({
   buttonText,
   onButtonClick,
 }: SkinServiceCardProps) => {
-  const cardClasses = "bg-white rounded-[16px] overflow-hidden drop-shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 w-[1236px] h-[452.5px] flex flex-row";
-  const imageClasses = "w-[393px] h-[453px] object-cover rounded-[16px] drop-shadow-[0_4px_6px_rgba(0,0,0,0.1)]";
-  const contentClasses = "p-8 flex-1 flex flex-col justify-start gap-4";
-  const buttonClasses = "bg-[#F9F2EB] text-black px-6 py-3 rounded-lg font-bold transition-colors duration-200 hover:bg-[#F0E6DD]";
+
+  // --- Typography Configuration ---
+  const titleTypography = {
+    fontFamily: "font-['Owners_XWide']",
+    weight: 'font-bold',
+    style: 'italic',
+    size: 'text-5xl',
+    lineHeight: 'leading-normal',
+    letterSpacing: 'tracking-normal',
+    horizontalAlign: 'text-center',
+    case: 'uppercase',
+    color: 'text-black'
+  };
+
+  const durationTypography = {
+    fontFamily: "font-['Owners_XWide']",
+    weight: 'font-normal',
+    style: 'not-italic',
+    size: 'text-base',
+    lineHeight: 'leading-normal',
+    letterSpacing: 'tracking-normal',
+    horizontalAlign: 'text-center',
+    case: 'uppercase',
+    color: 'text-black'
+  };
+
+  const buttonTypography = {
+    fontFamily: "font-['Owners_XWide']",
+    weight: 'font-normal',
+    style: 'not-italic',
+    size: 'text-base',
+    lineHeight: 'leading-normal',
+    letterSpacing: 'tracking-normal',
+    horizontalAlign: 'text-center',
+    case: 'capitalize',
+    color: 'text-[#757575]'
+  };
+
+  // --- Building Class Strings from Typography Objects ---
+  const titleClasses = Object.values(titleTypography).join(' ');
+  const durationClasses = Object.values(durationTypography).join(' ');
+  const buttonTextClasses = Object.values(buttonTypography).join(' ');
+
+  const cardClasses = "bg-white rounded-[16px] overflow-hidden transition-all duration-200 w-[1236px] h-[452.5px] flex flex-row";
+  const imageClasses = "w-[393px] h-[453px] object-cover rounded-[16px]";
+  const contentClasses = "bg-white p-8 flex-1 flex flex-col justify-start gap-4";
+  const buttonStyleClasses = "bg-[#F9F2EB] px-6 py-3 rounded-lg font-bold transition-colors duration-200 hover:bg-[#F0E6DD]";
 
   return (
     <div className={cardClasses}>
@@ -36,13 +79,13 @@ export const SkinServiceCard = ({
       />
 
       <div className={contentClasses}>
-        <h5 className="m-0 text-3xl font-normal uppercase text-black">{title}</h5>
+        <h5 className={titleClasses}>{title}</h5>
         <p className="text-sm font-normal text-gray-600">{text}</p>
-        <span className="text-sm font-normal uppercase text-black">{duration}</span>
+        <span className={durationClasses}>{duration}</span>
         
         <div className="mt-auto">
           <button
-            className={buttonClasses}
+            className={`${buttonStyleClasses} ${buttonTextClasses}`}
             type="button"
             onClick={onButtonClick}
           >

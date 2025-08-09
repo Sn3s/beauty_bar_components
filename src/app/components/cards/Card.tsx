@@ -56,7 +56,7 @@ export const Card = ({
     size: 'text-base',
     lineHeight: 'leading-normal',
     letterSpacing: 'tracking-normal',
-    horizontalAlign: 'text-center',
+    horizontalAlign: 'text-left',
     case: 'uppercase',
     color: 'text-black'
   };
@@ -114,12 +114,12 @@ export const Card = ({
       />
       {/* Card body */}
       <div className={bodyClasses}>
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-start w-full">
           <h5 className={titleClasses}>{title}</h5>
           <span className={durationClasses}>{duration}</span>
         </div>
         {children}
-        <div className="flex justify-between items-center w-full mt-auto">
+        <div className="flex justify-between items-start w-full mt-auto">
           <button
             className={buttonClasses}
             type="button"
