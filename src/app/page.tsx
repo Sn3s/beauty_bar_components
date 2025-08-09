@@ -10,6 +10,7 @@ import BookingsDropdownOwnersXWide from "./components/typography/bookings_dropdo
 import Link from "./components/link";
 import Button from "./components/button";
 import TextInputBox from "./components/text_input_box";
+import { Card } from "./components/Card";
 
 export default function Home() {
   return (
@@ -80,11 +81,38 @@ export default function Home() {
     <br />
 
     <TextInputBox value="reynan@testforce.com.au" />
-
-
-
     
+    <h1 className="text-4xl font-bold text-left text-gray-800 mb-6">Cards</h1>
+    <h2 className="text-2xl font-bold text-left text-gray-800 mb-6">Make up services</h2>
+      <Card
+        variant="makeup-service"
+        imgSrc="https://images.unsplash.com/photo-1620703131777-6f81b15104a3?q=80&w=2670&auto=format&fit=crop"
+        title="Beauty Makeup"
+        duration="10 MINS"
+        buttonText="BOOK NOW"
+        onButtonClick={() => console.log("Make up service button clicked!")}
+      />
 
+    <h2 className="text-2xl font-bold text-left text-gray-800 mb-6">Customer components</h2>
+      <Card
+        variant="customer-component"
+        imgSrc="https://images.unsplash.com/photo-1620703131777-6f81b15104a3?q=80&w=2670&auto=format&fit=crop"
+        title="Beauty Makeup"
+        duration="10 MINS"
+        buttonText="BOOK NOW"
+        onButtonClick={() => console.log("Make up service button clicked!")}
+      />
+
+    <h2 className="text-2xl font-bold text-left text-gray-800 mb-6">Skin Services</h2>
+      <Card
+        variant="skin-service"
+        imgSrc="https://images.unsplash.com/photo-1598440940562-b430d433f4a3?q=80&w=2670&auto=format&fit=crop"
+        title="Advanced Facial Treatment"
+        text="A rejuvenating facial that deeply cleanses, exfoliates, and nourishes the skin for a radiant glow. Perfect for all skin types."
+        duration="90 MINS"
+        buttonText="BOOK NOW"
+        onButtonClick={() => console.log("Skin service button clicked!")}
+      />
     </div>
   );
 }
