@@ -9,7 +9,7 @@ import ProfileDropdownOwnersXWide from "./components/typography/profile_dropdown
 import LogoutDropdownOwnersXWide from "./components/typography/logout_dropdown_owners_xwide";
 import BookingsDropdownOwnersXWide from "./components/typography/bookings_dropdown_owners_xwide";
 import Link from "./components/link";
-import Button from "./components/button";
+import Button, { PrimaryButton } from "./components/button";
 import TextInputBox from "./components/text_input_box";
 import OtpInput from "./components/OtpInput";
 import { SkinServiceCard } from "./components/cards/SkinServiceCard";
@@ -149,264 +149,112 @@ Cards
 
 
 
-<div className="max-w-md mx-auto mt-16 p-8 bg-white rounded-xl shadow">
-  <img
-    src={beautybarlogo.src}
-    alt="Beauty Bar Logo"
-    className="mx-auto mb-6"
-    style={{ width: 180, height: "auto" }}
-  />
-  <h1
-    style={{
-      fontFamily: "Inter, serif",
-      fontWeight: 700,
-      fontSize: 36,
-      textAlign: "center",
-      marginBottom: 24,
-      color: "#1A202C",
-      fontStyle: "italic",
-      letterSpacing: "-1px"
-    }}
-  >
-    LOG IN TO YOUR ACCOUNT
-  </h1>
-  <label
-    htmlFor="login-email"
-    style={{
-      display: "block",
-      fontFamily: "Inter, sans-serif",
-      fontWeight: 500,
-      fontSize: 16,
-      marginBottom: 8,
-      color: "#22223B"
-    }}
-  >
-  </label>
-  <TextInputBox
-    label="Email Address/Phone Number"
-    id="login-email"
-    placeholder="Enter your email or phone"
-    className="w-full mb-6"
-  />
-  <Button
-  style={{
-    width: "100%",
-    background: "#F9F4F0",
-    color: "#22223B",
-    fontWeight: 500,
-    fontSize: 20,
-    padding: "16px 0",
-    borderRadius: 12,
-    marginBottom: 24,
-    border: "none",
-    display: "flex", // Makes the button a flex container
-    justifyContent: "center", // Centers horizontally
-    alignItems: "center", // Centers vertically
-  }}
->
-  SIGN IN
-</Button>
-
-  <p
-    style={{
-      textAlign: "center",
-      fontSize: 16,
-      color: "#A0AEC0",
-      marginTop: 16
-    }}
-  >
-    Don’t have an account? <span style={{ color: "#22223B", fontWeight: 500 }}>Sign Up</span>
-  </p>
-</div>
+<Card className="max-w-md mx-auto"
+          header={
+          <img
+              src={beautybarlogo.src}
+              alt="Beauty Bar Logo"
+              className="mx-auto mb-6"
+              style={{ width: 180, height: "auto" }}
+            />
+          }
+          title="LOG IN TO YOUR ACCOUNT"
+          footer={
+            <>
+              <PrimaryButton>
+                SIGN IN
+              </PrimaryButton>
+              <p className="text-center text-base text-gray-400 mt-4">
+                Dont have an account? <span className="text-[#22223B] font-medium">Sign Up</span>
+              </p>
+            </>
+          }
+        >
+          <TextInputBox
+            label="Email Address/Phone Number"
+            id="login-email"
+            placeholder="Enter your email or phone"
+            className="w-full mb-6"
+          />
+        </Card>
 
 
-<div className="max-w-md mx-auto mt-16 p-8 bg-white rounded-xl shadow">
-  <img
-    src={beautybarlogo.src}
-    alt="Beauty Bar Logo"
-    className="mx-auto mb-6"
-    style={{ width: 180, height: "auto" }}
-  />
-  <h1
-    style={{
-      fontFamily: "Inter, serif",
-      fontWeight: 700,
-      fontSize: 36,
-      textAlign: "center",
-      marginBottom: 24,
-      color: "#1A202C",
-      fontStyle: "italic",
-      letterSpacing: "-1px"
-    }}
-  >
-    CHECK YOUR INBOX
-  </h1>
-  <p
-    style={{
-      textAlign: "center",
-      fontFamily: "Inter, sans-serif",
-      fontWeight: 400,
-      fontSize: 18,
-      color: "#22223B",
-      marginBottom: 8
-    }}
-  >
-    We sent a verification code to<br />
-    reynan@testforce.com.au and (03) 6282 0775
-  </p>
-  <div style={{ display: "flex", justifyContent: "center", margin: "32px 0" }}>
-    <OtpInput value={otp} onChange={setOtp} />
-  </div>
-  <Button
-  style={{
-    width: "100%",
-    background: "#F9F4F0",
-    color: "#22223B",
-    fontWeight: 500,
-    fontSize: 20,
-    padding: "16px 0",
-    borderRadius: 12,
-    marginBottom: 24,
-    border: "none",
-    display: "flex", // Makes the button a flex container
-    justifyContent: "center", // Centers horizontally
-    alignItems: "center", // Centers vertically
-  }}
->
-    VERIFY
-  </Button>
-  <p
-    style={{
-      textAlign: "center",
-      fontSize: 16,
-      color: "#22223B",
-      marginBottom: 24,
-      fontFamily: "Inter, sans-serif"
-    }}
-  >
+        <Card className="max-w-md mx-auto"
+          header={
+          <img
+              src={beautybarlogo.src}
+              alt="Beauty Bar Logo"
+              className="mx-auto mb-6"
+              style={{ width: 180, height: "auto" }}
+            />
+          }
+          title="Register an Account"
+          footer={
+            <>
+              <PrimaryButton>
+                SIGN UP
+              </PrimaryButton>
+              <p className="text-center text-base text-gray-400 mt-4">
+                Already have an account? <span className="text-[#22223B] font-medium">Sign In</span>
+              </p>
+            </>
+          }
+        >
 
-    Didn’t receive the verification code? <span style={{ color: "#22223B", fontWeight: 500, cursor: "pointer" }}>Click to resend</span>
-  </p>
-  <div style={{ textAlign: "center", color: "#22223B", fontFamily: "Inter, sans-serif", fontSize: 16 }}>
-    <span style={{ marginRight: 8, fontSize: 20 }}>←</span>
-    Back to Sign In
-  </div>
-</div>
+          <TextInputBox
+            label="Name"
+            id="login-name"
+            placeholder="Enter your name"
+            className="w-full mb-6"
+          />
+
+          <TextInputBox
+            label="Email"
+            id="login-email"
+            placeholder="Enter your email or phone"
+            className="w-full mb-6"
+          />
+
+          <TextInputBox
+            label="Phone Number"
+            id="login-phone"
+            placeholder="Enter your phone number"
+            className="w-full mb-6"
+          />
+
+        </Card>
 
 
-<div className="max-w-md mx-auto mt-16 p-8 bg-white rounded-xl shadow">
-  <img
-    src={beautybarlogo.src}
-    alt="Beauty Bar Logo"
-    className="mx-auto mb-6"
-    style={{ width: 180, height: "auto" }}
-  />
-  <h1
-    style={{
-      fontFamily: "Inter, serif",
-      fontWeight: 700,
-      fontSize: 36,
-      textAlign: "center",
-      marginBottom: 24,
-      color: "#1A202C",
-      fontStyle: "italic",
-      letterSpacing: "-1px"
-    }}
-  >
-    REGISTER AN ACCOUNT
-  </h1>
-  <label
-    htmlFor="register-name"
-    style={{
-      display: "block",
-      fontFamily: "Inter, sans-serif",
-      fontWeight: 500,
-      fontSize: 16,
-      marginBottom: 8,
-      color: "#22223B"
-    }}
-  >
+        <Card className="max-w-md mx-auto"
+          header={
+          <img
+              src={beautybarlogo.src}
+              alt="Beauty Bar Logo"
+              className="mx-auto mb-6"
+              style={{ width: 180, height: "auto" }}
+            />
+          }
+          title="Check Your Inbox"
+          subTitle="We sent a verification code to reynan@testforce.com.au and (03) 6282 0775"
+          footer={
+            <>
+                <PrimaryButton>
+            VERIFY
+                </PrimaryButton>
+                <p className="text-center text-sm text-gray-400 mt-4" style={{ fontSize: "12px" }}>
+                  Didn’t receive the verification code? <span className="text-[#22223B] font-medium">Click to Resend</span>
+                </p>
 
-  </label>
-  <TextInputBox
-    label="Name"
-    id="register-name"
-    placeholder="Reynan Decena"
-    className="w-full mb-6"
-    value="Reynan Decena"
-  />
-  <label
-    htmlFor="register-email"
-    style={{
-      display: "block",
-      fontFamily: "Inter, sans-serif",
-      fontWeight: 500,
-      fontSize: 16,
-      marginBottom: 8,
-      color: "#22223B"
-    }}
-  >
-
-  </label>
-  <TextInputBox
-    label="Email"
-    id="register-email"
-    placeholder="reynan@testforce.com.au"
-    className="w-full mb-6"
-    value="reynan@testforce.com.au"
-  />
-  <label
-    htmlFor="register-phone"
-    style={{
-      display: "block",
-      fontFamily: "Inter, sans-serif",
-      fontWeight: 500,
-      fontSize: 16,
-      marginBottom: 8,
-      color: "#22223B"
-    }}
-  >
-
-  </label>
-  <TextInputBox
-    label="Phone Number"
-    id="register-phone"
-    placeholder="(03) 9046 8168"
-    className="w-full mb-6"
-    value="(03) 9046 8168"
-  />
- <Button
-  style={{
-    width: "100%",
-    background: "#F9F4F0",
-    color: "#22223B",
-    fontWeight: 500,
-    fontSize: 20,
-    padding: "16px 0",
-    borderRadius: 12,
-    marginBottom: 24,
-    border: "none",
-    display: "flex", // Makes the button a flex container
-    justifyContent: "center", // Centers horizontally
-    alignItems: "center", // Centers vertically
-  }}
->
-    SIGN UP
-  </Button>
-  <p
-    style={{
-      textAlign: "center",
-      fontSize: 16,
-      color: "#22223B",
-      marginBottom: 0,
-      fontFamily: "Inter, sans-serif"
-    }}
-  >
-    Already have an account? <span style={{ color: "#22223B", fontWeight: 500, cursor: "pointer" }}>Sign in</span>
-  </p>
-</div>
-
-
+              <p className="text-center text-base text-gray-400 mt-4">
+                <span className="text-[#22223B] font-medium"> <br />Back to Sign In</span>
+              </p>
+            </>
+          }
+        >
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <OtpInput value={otp} onChange={setOtp} />
+          </div>
+        </Card>
 
 
     </div>

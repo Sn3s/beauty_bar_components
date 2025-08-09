@@ -3,6 +3,37 @@ import React, { useState } from "react";
 
 type AnimatedButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
+export function PrimaryButton({ children, style, ...props }: AnimatedButtonProps) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <button
+      style={{
+        width: "100%",
+        background: hovered ? "rgba(249, 242, 235, 1)" : "#F9F4F0",
+        color: "#22223B",
+        fontWeight: 500,
+        fontSize: 20,
+        padding: "16px 0",
+        borderRadius: 12,
+        marginBottom: 24,
+        border: "none",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        transition: "background 300ms ease-out",
+        cursor: "pointer",
+        ...style, // allow override
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+
 export default function AnimatedButton({ ...props }: AnimatedButtonProps) {
   const [hovered, setHovered] = useState(false);
 
