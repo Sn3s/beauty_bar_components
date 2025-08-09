@@ -92,7 +92,7 @@ export const SkinServiceCard = ({
 
       <div className={contentClasses}>
         <h5 className={titleClasses}>{title}</h5>
-        <div className="w-[600px]">
+        <div className="w-[600px] flex flex-col gap-4">
           <p className={textClasses}>{text}</p>
           <span className={durationClasses}>{duration}</span>
         </div>
