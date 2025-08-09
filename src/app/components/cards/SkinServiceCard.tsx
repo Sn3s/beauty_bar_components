@@ -45,7 +45,7 @@ export const SkinServiceCard = ({
 
   const durationTypography = {
     fontFamily: "font-['Owners_XWide']",
-    weight: 'font-base',
+    weight: 'font-normal',
     style: 'not-italic',
     size: 'text-base',
     lineHeight: 'leading-normal',
@@ -66,6 +66,7 @@ export const SkinServiceCard = ({
     color: 'text-black'
   };
 
+  // --- Building Class Strings from Typography Objects ---
   const titleClasses = Object.values(titleTypography).join(' ');
   const textClasses = Object.values(textTypography).join(' ');
   const durationClasses = Object.values(durationTypography).join(' ');
@@ -74,7 +75,7 @@ export const SkinServiceCard = ({
   const cardClasses = "bg-white rounded-[16px] overflow-hidden transition-all duration-200 w-[1236px] h-[452.5px] flex flex-row";
   const imageClasses = "w-[393px] h-[453px] object-cover rounded-[16px]";
   const contentClasses = "bg-white p-8 flex-1 flex flex-col justify-start gap-4";
-  const buttonStyleClasses = "bg-[#F9F2EB] px-6 py-3 rounded-lg font-bold transition-colors duration-200 hover:bg-[#F0E6DD]"; // Kept font-bold here
+  const buttonStyleClasses = "bg-[#F9F2EB] px-6 py-3 rounded-lg transition-colors duration-200 hover:bg-[#F0E6DD]";
 
   return (
     <div className={cardClasses}>
@@ -91,8 +92,10 @@ export const SkinServiceCard = ({
 
       <div className={contentClasses}>
         <h5 className={titleClasses}>{title}</h5>
-        <p className={textClasses}>{text}</p>
-        <span className={durationClasses}>{duration}</span>
+        <div className="w-[600px]">
+          <p className={textClasses}>{text}</p>
+          <span className={durationClasses}>{duration}</span>
+        </div>
         
         <div className="mt-auto">
           <button
