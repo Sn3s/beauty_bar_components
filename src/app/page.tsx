@@ -246,7 +246,13 @@ Cards
                 </p>
 
               <p className="text-center text-base text-gray-400 mt-4">
-                <span className="text-[#22223B] font-medium"> <br />Back to Sign In</span>
+                <span className="text-[#22223B] font-medium flex justify-center items-center gap-2">
+                  {/* Back Arrow SVG */}
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="inline-block" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 14.25L2.25 9M2.25 9L7.5 3.75M2.25 9H15.75" stroke="#22223B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Back to Sign In
+                </span>
               </p>
             </>
           }
