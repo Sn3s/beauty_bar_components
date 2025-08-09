@@ -1,12 +1,12 @@
 import React from "react";
 
 type TextInputBoxProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  label?: string;
+  label?: string; // Dynamic label prop
   value?: string;
 };
 
 export default function TextInputBox({
-  label = "Email Address/Phone Number",
+  label = "", // Default label value
   value = "",
   ...props
 }: TextInputBoxProps) {
@@ -26,13 +26,13 @@ export default function TextInputBox({
             color: "rgba(2, 6, 23, 1)",
           }}
         >
-          {label}
+          {label} {/* Dynamically rendering the label */}
         </label>
       )}
       <input
         type="text"
         value={value}
-        readOnly
+        // Removed the `readOnly` attribute to make the input editable
         style={{
           width: "384px",
           height: "40px",

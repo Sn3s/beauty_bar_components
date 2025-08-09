@@ -39,7 +39,7 @@ export default function AnimatedButton({ ...props }: AnimatedButtonProps) {
           width: "92px",
           height: "24px",
           paddingTop: "0px",
-          paddingRight: "4px", // spacing/1 = 4px
+          paddingRight: "4px",
           paddingBottom: "0px",
           paddingLeft: "4px",
           gap: "0px",
@@ -47,17 +47,18 @@ export default function AnimatedButton({ ...props }: AnimatedButtonProps) {
           fontWeight: 400,
           fontStyle: "normal",
           fontSize: "16px",
-          lineHeight: "1.5", // leading-6 = 24px = 1.5
+          lineHeight: "1.5",
           letterSpacing: "0",
           textTransform: "uppercase",
-          color: hovered ? "rgba(2, 6, 23, 1)" : "rgba(243, 243, 243, 1)",
+          // Default text color (when not hovered)
+          color: hovered ? "rgba(150, 150, 150, 1)" : "rgba(2, 6, 23, 1)",
           textAlign: "center",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        BUTTON
+        {props.children}
       </span>
     </button>
   );
