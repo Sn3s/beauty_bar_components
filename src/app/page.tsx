@@ -10,8 +10,8 @@ import BookingsDropdownOwnersXWide from "./components/typography/bookings_dropdo
 import Link from "./components/link";
 import Button from "./components/button";
 import TextInputBox from "./components/text_input_box";
-import { Card } from "./components/Card";
 import { SkinServiceCard } from "./components/cards/SkinServiceCard";
+import { Card } from "./components/cards/Card";
 
 export default function Home() {
   return (
