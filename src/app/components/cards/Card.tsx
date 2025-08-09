@@ -38,17 +38,66 @@ export const Card = ({
   const baseClasses = `bg-white rounded-2xl transition-all duration-200 h-[539px] flex flex-col overflow-hidden ${cardWidthClass}`;
 
   // Conditional classes for the specific variant.
-  // The 'customer-component' variant has a drop shadow.
   const variantSpecificClasses = variant === 'customer-component' ? 'drop-shadow-[0_4px_6px_rgba(0,0,0,0.1)]' : '';
 
   // Conditional classes for the body content.
-  // The 'makeup-service' variant has a unique background color.
   const bodyClasses = `p-5 flex-1 flex flex-col justify-start gap-4 h-[109px] ${
     variant === 'makeup-service' ? 'bg-[#F9F2EB]' : ''
   }`;
 
   // Conditional placeholder text for the image alt and fallback URL.
   const placeholderText = variant === 'makeup-service' ? 'Makeup Service Image' : 'Customer Component Image';
+
+  // --- Typography Configuration ---
+  const titleTypography = {
+    fontFamily: "font-['Owners_XWide']",
+    weight: 'font-normal',
+    style: 'not-italic',
+    size: 'text-base',
+    lineHeight: 'leading-normal',
+    letterSpacing: 'tracking-normal',
+    horizontalAlign: 'text-center',
+    case: 'uppercase',
+    color: 'text-black'
+  };
+
+  const durationTypography = variant === 'makeup-service' ? {
+    fontFamily: "font-['Owners_XWide']",
+    weight: 'font-normal',
+    style: 'not-italic',
+    size: 'text-xs',
+    lineHeight: 'leading-normal',
+    letterSpacing: 'tracking-normal',
+    horizontalAlign: 'text-center',
+    case: 'uppercase',
+    color: 'text-black'
+  } : {
+    fontFamily: "font-['Owners_XWide']",
+    weight: 'font-normal',
+    style: 'not-italic',
+    size: 'text-base',
+    lineHeight: 'leading-normal',
+    letterSpacing: 'tracking-normal',
+    horizontalAlign: 'text-center',
+    case: 'uppercase',
+    color: 'text-black'
+  };
+
+  const buttonTypography = {
+    fontFamily: "font-['Owners_XWide']",
+    weight: 'font-normal',
+    style: 'not-italic',
+    size: 'text-base',
+    lineHeight: 'leading-normal',
+    letterSpacing: 'tracking-normal',
+    horizontalAlign: 'text-center',
+    case: 'capitalize',
+    color: 'text-[#757575]'
+  };
+
+  const titleClasses = `${titleTypography.weight} ${titleTypography.size} ${titleTypography.case} ${titleTypography.color}`;
+  const durationClasses = `${durationTypography.weight} ${durationTypography.size} ${durationTypography.case} ${durationTypography.color}`;
+  const buttonClasses = `${buttonTypography.color} bg-transparent border-none p-0 cursor-pointer`;
 
   return (
     <div className={`${baseClasses} ${variantSpecificClasses}`}>
@@ -66,13 +115,13 @@ export const Card = ({
       {/* Card body */}
       <div className={bodyClasses}>
         <div className="flex justify-between items-center w-full">
-          <h5 className="m-0 text-base font-normal uppercase text-black">{title}</h5>
-          <span className="text-xs font-normal uppercase text-black">{duration}</span>
+          <h5 className={titleClasses}>{title}</h5>
+          <span className={durationClasses}>{duration}</span>
         </div>
         {children}
         <div className="flex justify-between items-center w-full mt-auto">
           <button
-            className="text-[#757575] bg-transparent border-none p-0 cursor-pointer"
+            className={buttonClasses}
             type="button"
             onClick={onButtonClick}
           >
