@@ -4,6 +4,7 @@ import React from 'react';
  * Props for the generic Card component.
  * @param {string} className - Optional Tailwind CSS classes for the card container.
  * @param {string} title - The main title of the card's header section (simple string). Optional.
+ * @param {string} subTitle - The subtitle of the card's header section (simple string). Optional.
  * @param {React.ReactNode} header - The content for the card's header section (complex JSX). Optional.
  * @param {React.ReactNode} footer - The content for the card's footer section. Optional.
  * @param {React.ReactNode} children - The main content of the card.
@@ -11,6 +12,7 @@ import React from 'react';
 type CardProps = {
   className?: string;
   title?: string;
+  subTitle?: string;
   header?: React.ReactNode;
   footer?: React.ReactNode;
   children: React.ReactNode;
@@ -19,6 +21,7 @@ type CardProps = {
 export const Card = ({
   className = '',
   title,
+  subTitle,
   header,
   footer,
   children,
@@ -30,7 +33,18 @@ export const Card = ({
     weight: 'font-bold',
     size: 'text-3xl',
     case: 'uppercase',
+    horizontalAlign: 'text-center',
     color: 'text-black',
+  };
+
+  const subTitleTypography = {
+    fontFamily: "font-['Owners_XWide']",
+    size: 'text-xs',
+    weight: 'font-normal',
+    lineHeight: 'leading-[20px]',
+    letterSpacing: 'tracking-[-0.5px]',
+    horizontalAlign: 'text-center',
+    color: 'text-[#757575]'
   };
 
   const headerContainerTypography = {
@@ -63,6 +77,7 @@ export const Card = ({
 
   // --- Building Class Strings from Typography Objects ---
   const titleClasses = Object.values(titleTypography).join(' ');
+  const subTitleClasses = Object.values(subTitleTypography).join(' ');
   const headerContainerClasses = Object.values(headerContainerTypography).join(' ');
   const footerContainerClasses = Object.values(footerContainerTypography).join(' ');
   const contentClasses = Object.values(contentContainerTypography).join(' ');
@@ -75,6 +90,7 @@ export const Card = ({
         <div className={headerContainerClasses}>
             {header}
             {title && <h3 className={titleClasses}>{title}</h3>}
+            {subTitle && <p className={subTitleClasses}>{subTitle}</p>}
         </div>
       )}
 

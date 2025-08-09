@@ -123,6 +123,7 @@ export default function Home() {
           className="rounded-lg w-full"
         />}
         title="Card Title"
+        subTitle="Please enter your email to reset the password"
         footer={<p className="text-center text-sm text-gray-400">Don't have an account? <span>Sign Up</span></p>}
       >
         <p className="text-gray-600 mb-4">
