@@ -11,6 +11,7 @@ import Link from "./components/link";
 import Button from "./components/button";
 import TextInputBox from "./components/text_input_box";
 import { SkinServiceCard } from "./components/cards/SkinServiceCard";
+import { CardsComponent } from "./components/cards/CardsComponent";
 import { Card } from "./components/cards/Card";
 
 export default function Home() {
@@ -85,7 +86,7 @@ export default function Home() {
 
     <h1 className="text-4xl font-bold text-left text-gray-800 mb-6">Cards</h1>
     <h2 className="text-2xl font-bold text-left text-gray-800 mb-6">Make up services</h2>
-      <Card
+      <CardsComponent
         variant="makeup-service"
         imgSrc="https://images.unsplash.com/photo-1620703131777-6f81b15104a3?q=80&w=2670&auto=format&fit=crop"
         title="Beauty Makeup"
@@ -95,7 +96,7 @@ export default function Home() {
       />
 
     <h2 className="text-2xl font-bold text-left text-gray-800 mb-6">Customer components</h2>
-      <Card
+      <CardsComponent
         variant="customer-component"
         imgSrc="https://images.unsplash.com/photo-1620703131777-6f81b15104a3?q=80&w=2670&auto=format&fit=crop"
         title="Beauty Makeup"
@@ -113,6 +114,23 @@ export default function Home() {
           buttonText="Book Now"
           onButtonClick={() => console.log("Skinservice button clicked!")}
       />
+
+    <h2 className="text-2xl font-bold text-left text-gray-800 mb-6">Generic Card</h2>
+      <Card className="max-w-md mx-auto"
+        header={<img
+          src="https://placehold.co/256x46/e2e8f0/64748b?text=Image+Example"
+          alt="Placeholder"
+          className="rounded-lg w-full"
+        />}
+        title="Card Title"
+        footer={<p className="text-center text-sm text-gray-400">Don't have an account? <span>Sign Up</span></p>}
+      >
+        <p className="text-gray-600 mb-4">
+          This is a complete card with a header, main content, and a footer.
+        </p>
+
+      </Card>
+
     </div>
   );
 }
