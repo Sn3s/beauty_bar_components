@@ -17,6 +17,7 @@ import { CardsComponent } from "./components/cards/CardsComponent";
 import { Card } from "./components/cards/Card";
 
 import React, { useState } from "react";
+import BookingCalendar from "./components/BookingCalendar";
 
 export default function Home() {
 
@@ -262,6 +263,7 @@ Cards
           </div>
         </Card>
 
+          <BookingCalendar />
 
     </div>
   );
