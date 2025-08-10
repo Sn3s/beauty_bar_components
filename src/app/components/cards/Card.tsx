@@ -29,11 +29,14 @@ export const Card = ({
 
   // --- Typography & Style Configuration ---
   const titleTypography = {
-    fontFamily: "font-['Owners_XWide']",
+    fontFamily: "font-['BentonModDisp']",
     weight: 'font-bold',
+    style: 'italic',
     size: 'text-3xl',
-    case: 'uppercase',
+    lineHeight: 'leading-[40px]',
+    letterSpacing: 'tracking-[-1.8%]',
     horizontalAlign: 'text-center',
+    case: 'uppercase',
     color: 'text-black',
   };
 
